@@ -5,69 +5,64 @@ import { Copy, Check } from "lucide-react";
 
 const TABS = [
   {
-    label: "INSTALL",
-    code: `# npm
-npm install @jarvis/sdk
+    label: "WORKOUT",
+    code: `TODAY · UPPER POWER
 
-# pnpm
-pnpm add @jarvis/sdk
+1  Barbell Bench     4 x 5   @ 175 lb
+2  Weighted Pull-Up  4 x 6   @ +25 lb
+3  Overhead Press    3 x 8   @ 95 lb
+4  Barbell Row       3 x 10  @ 135 lb
+5  Face Pull         3 x 15  @ 40 lb
 
-# yarn
-yarn add @jarvis/sdk`,
+REST 2–3 min · TEMPO 3-1-1
+▶ Watch demo for each lift`,
   },
   {
-    label: "CREATE",
-    code: `import { jarvis } from '@jarvis/sdk'
+    label: "NUTRITION",
+    code: `DAILY TARGETS
 
-const agent = jarvis.agent({
-  name: 'data-analyst',
-  model: 'claude-opus-4',
-  tools: ['db.query', 'code.run'],
-  memory: { scope: 'persistent' }
-})
+CALORIES   2,180 kcal
+PROTEIN    185 g   ████████░░  92%
+CARBS      210 g   ██████░░░░  64%
+FATS        60 g   ███████░░░  71%
 
-const result = await agent.run(
-  'Analyze Q2 revenue trends'
-)
-// → runs autonomously, returns report`,
+MEAL IDEAS
+• Greek yogurt + berries + granola
+• Chicken, rice, roasted veg
+• Salmon, sweet potato, greens`,
   },
   {
-    label: "ORCHESTRATE",
-    code: `const pipeline = jarvis.workflow({
-  agents: [researcher, analyst, writer],
-  strategy: 'parallel',
-  onComplete: async (results) => {
-    await jarvis.notify(results)
-  },
-  timeout: '10m',
-})
+    label: "RECOVERY",
+    code: `RECOVERY DASHBOARD
 
-const run = await pipeline.execute(task)
-// → 3 agents · 4.2s · $0.003 cost`,
+SLEEP        7h 24m   ●●●●○  good
+HRV          62 ms    trending up
+RESTING HR   54 bpm
+SORENESS     legs (2/5)
+
+TODAY
+Mobility flow · 10 min
+Hydration goal · 3.0 L`,
   },
   {
-    label: "OBSERVE",
-    code: `// Stream agent thoughts in real time
-const stream = jarvis.stream(agentId)
+    label: "PROGRESS",
+    code: `12-WEEK PROGRESS
 
-stream.on('thought',  (t) => console.log(t))
-stream.on('tool_use', (t) => logTool(t))
-stream.on('complete', (r) => save(r))
+WEIGHT     198 → 179 lb   (-19)
+BENCH 1RM  155 → 195 lb   (+40)
+WAIST      36" → 32.5"
+PHOTOS     14 check-ins logged
 
-// Query audit trail
-const logs = await jarvis.audit({
-  agentId,
-  from: '2025-04-01',
-  actions: ['tool_call', 'api_request'],
-})`,
+STREAK     54 days
+NEXT GOAL  Bodyweight bench x5`,
   },
 ];
 
-const SDK_PROPS = [
-  { k: "TypeScript native",  v: "Full type-safety, auto-generated types from your schema." },
-  { k: "Streaming output",   v: "Real-time agent thoughts via SSE and WebSockets." },
-  { k: "Edge-compatible",    v: "Node, Deno, Bun, Cloudflare Workers, Vercel Edge." },
-  { k: "8KB gzipped",        v: "Lightweight core. Tree-shakeable plugins." },
+const APP_PROPS = [
+  { k: "iOS & Android app",  v: "Your plan, logging, and coach chat in one place." },
+  { k: "500+ exercise videos", v: "HD demos with cues for every movement." },
+  { k: "Habit & streak tracker", v: "Build consistency with daily check-offs." },
+  { k: "Private community",  v: "Train alongside members chasing the same goals." },
 ];
 
 export function DevelopersSection() {
@@ -99,23 +94,23 @@ export function DevelopersSection() {
         <div
           className={`border-b border-[#1e1e1e] py-8 transition-all duration-500 ${vis ? "opacity-100" : "opacity-0"}`}
         >
-          <span className="sys-tag mb-3 block">DEVELOPER SDK</span>
+          <span className="sys-tag mb-3 block">THE APP</span>
           <h2 className="font-display text-6xl lg:text-8xl leading-[0.88] tracking-tight text-[#f2ede6]">
-            BUILT FOR<br />
-            <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>BUILDERS</span>
+            YOUR GYM<br />
+            <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>IN YOUR POCKET</span>
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 border-b border-[#1e1e1e]">
-          {/* Left — SDK properties */}
+          {/* Left — app features */}
           <div className="border-r border-[#1e1e1e]">
             <div className="border-b border-[#1e1e1e] p-6">
               <p className="text-sm text-[#5a5a5a] leading-relaxed max-w-md">
-                A zero-friction SDK to spawn, orchestrate, and observe agents in production. Ship your first autonomous workflow in under 10 minutes.
+                Everything you need to train lives in one app — your programming, nutrition targets, progress photos, and a direct line to your coach. Open it, hit today&apos;s session, done.
               </p>
             </div>
 
-            {SDK_PROPS.map((p, i) => (
+            {APP_PROPS.map((p, i) => (
               <div
                 key={p.k}
                 className={`border-b border-[#1e1e1e] px-6 py-5 row-hover transition-all duration-400 ${
@@ -124,7 +119,7 @@ export function DevelopersSection() {
                 style={{ transitionDelay: `${i * 60 + 100}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="font-mono text-[11px] text-[#2196f3] tracking-wider">{p.k}</span>
+                  <span className="font-mono text-[11px] text-[#c6f752] tracking-wider">{p.k}</span>
                   <span className="font-mono text-[10px] text-[#3a3a3a]">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <p className="mt-1 text-sm text-[#5a5a5a]">{p.v}</p>
@@ -132,16 +127,16 @@ export function DevelopersSection() {
             ))}
 
             <div className="p-6 flex items-center gap-6">
-              <a href="#" className="font-mono text-[11px] text-[#2196f3] tracking-wider hover:underline">
-                READ THE DOCS →
+              <a href="#" className="font-mono text-[11px] text-[#c6f752] tracking-wider hover:underline">
+                APP STORE ↗
               </a>
               <a href="#" className="font-mono text-[11px] text-[#5a5a5a] tracking-wider hover:text-[#f2ede6] transition-colors">
-                GITHUB ↗
+                GOOGLE PLAY ↗
               </a>
             </div>
           </div>
 
-          {/* Right — code block */}
+          {/* Right — in-app preview */}
           <div
             className={`flex flex-col transition-all duration-600 delay-200 ${
               vis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -155,35 +150,34 @@ export function DevelopersSection() {
                   onClick={() => setTab(i)}
                   className={`flex-1 py-3 font-mono text-[10px] tracking-[0.15em] transition-colors relative ${
                     tab === i
-                      ? "text-[#2196f3] bg-[#0e0e0e]"
+                      ? "text-[#c6f752] bg-[#0e0e0e]"
                       : "text-[#3a3a3a] hover:text-[#5a5a5a] hover:bg-[#0a0a0a]"
                   }`}
                 >
                   {t.label}
                   {tab === i && (
-                    <span className="absolute bottom-0 left-0 right-0 h-px bg-[#2196f3]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-px bg-[#c6f752]" />
                   )}
                 </button>
               ))}
               <button
                 onClick={copy}
-                className="px-4 border-l border-[#1e1e1e] text-[#3a3a3a] hover:text-[#2196f3] transition-colors"
-                aria-label="Copy"
+                className="px-4 border-l border-[#1e1e1e] text-[#3a3a3a] hover:text-[#c6f752] transition-colors"
+                aria-label="Copy plan"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-[#22c55e]" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
-            {/* Code lines */}
+            {/* Preview lines */}
             <div className="flex-1 bg-[#050505] p-6 font-mono text-[12px] min-h-[300px]">
-              <pre>
+              <pre className="whitespace-pre-wrap">
                 {TABS[tab].code.split("\n").map((line, li) => (
                   <div
                     key={`${tab}-${li}`}
-                    className="leading-7 flex gap-4"
+                    className="leading-7"
                     style={{ animation: `fade-up 0.25s ease ${li * 45}ms both` }}
                   >
-                    <span className="text-[#2e2e2e] select-none w-4 text-right shrink-0">{li + 1}</span>
                     <span className="text-[#5a5a5a]">{line}</span>
                   </div>
                 ))}
@@ -192,10 +186,10 @@ export function DevelopersSection() {
 
             {/* Footer */}
             <div className="border-t border-[#1e1e1e] px-6 py-3 flex items-center justify-between bg-[#080808]">
-              <span className="font-mono text-[10px] text-[#3a3a3a]">@jarvis/sdk · v4.0.0 · stable</span>
+              <span className="font-mono text-[10px] text-[#3a3a3a]">Fitness Republic App · v3.1</span>
               <div className="flex items-center gap-2">
                 <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
-                <span className="font-mono text-[10px] text-[#22c55e]">STABLE</span>
+                <span className="font-mono text-[10px] text-[#22c55e]">SYNCED</span>
               </div>
             </div>
           </div>

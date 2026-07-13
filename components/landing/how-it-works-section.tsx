@@ -5,49 +5,50 @@ import { useEffect, useRef, useState } from "react";
 const STEPS = [
   {
     id: "01",
-    tag: "DEFINE",
-    title: "DECLARE\nYOUR AGENTS",
-    desc: "Describe what each agent should do in natural language or YAML. Assign tools, memory scopes, and permission boundaries. JARVIS handles the runtime.",
-    code: `import { jarvis } from '@jarvis/sdk'
+    tag: "ASSESS",
+    title: "TELL US\nYOUR GOALS",
+    desc: "Start with a deep-dive assessment: your goals, training history, injuries, schedule, and lifestyle. Your coach uses it to understand exactly where you are and where you want to be.",
+    file: "intake-profile.txt",
+    code: `GOAL          Lose 20 lbs · build strength
+EXPERIENCE    Intermediate · 2 yrs lifting
+TRAINING DAYS 4 / week · 45–60 min
+EQUIPMENT     Home gym · dumbbells + rack
+INJURIES      Left shoulder (managed)
+SCHEDULE      Early mornings preferred
 
-const researcher = jarvis.agent({
-  name: 'researcher',
-  role: 'Gather and verify facts',
-  tools: ['web.search', 'db.query'],
-  memory: { scope: 'session' }
-})
-
-// Agent is ready to spawn`,
+> Matched with Coach Maya R.
+> Assessment complete.`,
   },
   {
     id: "02",
-    tag: "COMPOSE",
-    title: "WIRE THE\nWORKFLOW",
-    desc: "Connect agents into pipelines, DAGs, or reactive swarms. Define handoffs, fallbacks, and escalation paths. JARVIS resolves execution order at runtime.",
-    code: `jarvis.workflow('research-pipeline', {
-  agents: [researcher, writer, critic],
-  strategy: 'sequential',
-  onFailure: 'retry',
-  maxIterations: 12,
-})
+    tag: "BUILD",
+    title: "GET YOUR\nCUSTOM PLAN",
+    desc: "Within 48 hours you receive a fully personalized training and nutrition plan — progressive, sustainable, and mapped to your equipment and calendar. Nothing generic, ever.",
+    file: "week-01-plan.txt",
+    code: `MON  Upper Power     5 lifts · RPE 8
+TUE  Lower Power     5 lifts · RPE 8
+WED  Recovery        mobility + 8k steps
+THU  Upper Hypertrophy
+FRI  Lower Hypertrophy
+SAT  Conditioning    intervals · 20 min
 
-// Agents collaborate autonomously
-// Dependencies resolved automatically`,
+NUTRITION  2,180 kcal · 185g protein
+HYDRATION  3.0 L / day`,
   },
   {
     id: "03",
-    tag: "DEPLOY",
-    title: "SHIP TO\nPRODUCTION",
-    desc: "Push to production with one command. JARVIS handles horizontal scaling, queue management, full observability, and cost controls across all your agents.",
-    code: `await jarvis.deploy({
-  env: 'production',
-  scaling: { min: 2, max: 500 },
-  regions: ['us-east', 'eu-west'],
-  monitoring: 'full-trace',
-})
+    tag: "TRAIN",
+    title: "TRAIN WITH\nA COACH",
+    desc: "Log your workouts, send form videos, and check in weekly. Your coach reviews everything and adjusts your program so progress never stalls. You show up — we handle the rest.",
+    file: "weekly-check-in.txt",
+    code: `WEIGHT        -1.4 lbs this week ✓
+BENCH 1RM     +5 lbs → 185 lbs
+ADHERENCE     Training 100% · Nutrition 92%
+SLEEP         7.2 hrs avg
+FORM REVIEW   Squat depth approved ✓
 
-// 12 regions · 99.97% SLA
-// < 80ms agent spawn time`,
+COACH NOTE
+"Great week. Adding volume to legs."`,
   },
 ];
 
@@ -81,14 +82,14 @@ export function HowItWorksSection() {
           className={`border-b border-[#1e1e1e] py-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 transition-all duration-500 ${vis ? "opacity-100" : "opacity-0"}`}
         >
           <div>
-            <span className="sys-tag mb-3 block">PROCESS</span>
+            <span className="sys-tag mb-3 block">THE METHOD</span>
             <h2 className="font-display text-6xl lg:text-8xl leading-[0.88] tracking-tight text-[#f2ede6]">
-              SHIP IN<br />
-              <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>THREE STEPS</span>
+              HOW IT<br />
+              <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>WORKS</span>
             </h2>
           </div>
           <span className="font-mono text-[10px] text-[#3a3a3a] tracking-widest">
-            DEFINE &nbsp;·&nbsp; COMPOSE &nbsp;·&nbsp; DEPLOY
+            ASSESS &nbsp;·&nbsp; BUILD &nbsp;·&nbsp; TRAIN
           </span>
         </div>
 
@@ -108,17 +109,16 @@ export function HowItWorksSection() {
                   <span className="font-mono text-[9px] text-[#3a3a3a] tracking-widest">{s.tag}</span>
                   <span className="font-mono text-[10px] text-[#3a3a3a]">{s.id}</span>
                 </div>
-                <h3 className={`font-display text-2xl leading-[0.9] transition-colors ${
-                  active === i ? "text-[#2196f3]" : "text-[#3a3a3a] group-hover:text-[#5a5a5a]"
+                <h3 className={`font-display text-2xl leading-[0.9] whitespace-pre-line transition-colors ${
+                  active === i ? "text-[#c6f752]" : "text-[#3a3a3a] group-hover:text-[#5a5a5a]"
                 }`}>
                   {s.title}
                 </h3>
-                {/* Progress bar */}
                 {active === i && (
                   <div className="mt-4 h-px bg-[#1e1e1e] overflow-hidden">
                     <div
                       key={active}
-                      className="h-full bg-[#2196f3]"
+                      className="h-full bg-[#c6f752]"
                       style={{ width: 0, animation: "draw-line 5s linear forwards" }}
                     />
                   </div>
@@ -133,8 +133,8 @@ export function HowItWorksSection() {
             <div className="border-r border-[#1e1e1e] p-8 flex flex-col justify-between">
               <div>
                 <p className="text-sm text-[#5a5a5a] leading-relaxed mb-8">{step.desc}</p>
-                <a href="#" className="inline-flex items-center gap-2 font-mono text-[11px] text-[#2196f3] tracking-wider hover:underline">
-                  READ DOCS →
+                <a href="#pricing" className="inline-flex items-center gap-2 font-mono text-[11px] text-[#c6f752] tracking-wider hover:underline">
+                  GET STARTED →
                 </a>
               </div>
               <div className="mt-8 font-mono text-[10px] text-[#3a3a3a] border-t border-[#1e1e1e] pt-4">
@@ -142,19 +142,17 @@ export function HowItWorksSection() {
               </div>
             </div>
 
-            {/* Code block */}
+            {/* Plan preview block */}
             <div className="bg-[#050505]">
-              {/* Code header */}
               <div className="border-b border-[#1e1e1e] px-5 py-3 flex items-center justify-between">
-                <span className="font-mono text-[10px] text-[#3a3a3a]">agent-config.ts</span>
+                <span className="font-mono text-[10px] text-[#3a3a3a]">{step.file}</span>
                 <div className="flex items-center gap-2">
                   <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
-                  <span className="font-mono text-[10px] text-[#22c55e]">READY</span>
+                  <span className="font-mono text-[10px] text-[#22c55e]">SYNCED</span>
                 </div>
               </div>
-              {/* Code lines */}
               <div className="p-6 font-mono text-[12px] min-h-[260px]">
-                <pre>
+                <pre className="whitespace-pre-wrap">
                   {step.code.split("\n").map((line, li) => (
                     <div
                       key={`${active}-${li}`}
@@ -164,7 +162,7 @@ export function HowItWorksSection() {
                       <span className="text-[#3a3a3a] select-none w-5 inline-block text-right mr-4">
                         {li + 1}
                       </span>
-                      <span className="text-[#5a5a5a]">{line}</span>
+                      <span className={line.startsWith(">") || line.startsWith("\"") ? "text-[#c6f752]" : "text-[#5a5a5a]"}>{line}</span>
                     </div>
                   ))}
                 </pre>

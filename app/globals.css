@@ -16,24 +16,24 @@
   --color-muted-foreground: #5a5a5a;
 
   /* Electric blue accent */
-  --color-primary: #2196f3;
+  --color-primary: #c6f752;
   --color-primary-foreground: #050505;
-  --color-accent: #2196f3;
+  --color-accent: #c6f752;
   --color-accent-foreground: #050505;
 
   /* Borders */
   --color-border: #1e1e1e;
   --color-border-bright: #2e2e2e;
   --color-input: #1a1a1a;
-  --color-ring: #2196f3;
+  --color-ring: #c6f752;
 
   /* Status */
   --color-green: #22c55e;
   --color-red: #ef4444;
-  --color-blue: #2196f3;
+  --color-blue: #c6f752;
 
   /* Chart */
-  --color-chart-1: #2196f3;
+  --color-chart-1: #c6f752;
   --color-chart-2: #22c55e;
   --color-chart-3: #60a5fa;
   --color-chart-4: #a78bfa;
@@ -49,12 +49,12 @@
   /* Sidebar */
   --color-sidebar: #050505;
   --color-sidebar-foreground: #f2ede6;
-  --color-sidebar-primary: #2196f3;
+  --color-sidebar-primary: #c6f752;
   --color-sidebar-primary-foreground: #050505;
   --color-sidebar-accent: #141414;
   --color-sidebar-accent-foreground: #f2ede6;
   --color-sidebar-border: #1e1e1e;
-  --color-sidebar-ring: #2196f3;
+  --color-sidebar-ring: #c6f752;
   
   /* Destructive */
   --color-destructive: #ef4444;
@@ -108,7 +108,7 @@
   }
 
   ::selection {
-    background: #2196f3;
+    background: #c6f752;
     color: #050505;
   }
 }
@@ -162,8 +162,8 @@
 .status-pulse { animation: status-pulse 1.5s ease-in-out infinite; }
 
 @keyframes blue-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(33,150,243,0); }
-  50%       { box-shadow: 0 0 24px 4px rgba(33,150,243,0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(198,247,82,0); }
+  50%       { box-shadow: 0 0 24px 4px rgba(198,247,82,0.15); }
 }
 .amber-glow { animation: blue-glow 3s ease-in-out infinite; }
 
@@ -206,7 +206,7 @@
 .hr-amber {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, #2196f3 0%, transparent 70%);
+  background: linear-gradient(90deg, #c6f752 0%, transparent 70%);
 }
 
 /* Corner + mark */
@@ -227,7 +227,7 @@
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #2196f3;
+  color: #c6f752;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -237,7 +237,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #2196f3;
+  background: #c6f752;
   display: inline-block;
 }
 

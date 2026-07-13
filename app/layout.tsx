@@ -23,9 +23,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'JARVIS — Agentic AI Platform',
-  description: 'The platform to orchestrate, deploy, and scale autonomous AI agents. Build the intelligence layer of your product.',
-  keywords: ['AI agents', 'agentic AI', 'autonomous agents', 'AI platform', 'multi-agent orchestration'],
+  title: 'Fitness Republic — Premium Online Coaching',
+  description: 'Personalized training, nutrition, and 1-on-1 coaching engineered for real transformation. Train with expert coaches from anywhere.',
+  keywords: ['online fitness coaching', 'personal training', 'nutrition coaching', 'strength training', 'body transformation', 'workout programs'],
 }
 
 export const viewport: Viewport = {

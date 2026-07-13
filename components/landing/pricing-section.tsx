@@ -5,52 +5,51 @@ import { useState, useEffect, useRef } from "react";
 const PLANS = [
   {
     id: "01",
-    name: "STARTER",
-    tagline: "Explore agentic AI",
-    price: { mo: 0, yr: 0 },
+    name: "SELF-GUIDED",
+    tagline: "Train on your own",
+    price: { mo: 29, yr: 23 },
     features: [
-      "Up to 5 agents",
-      "10K agent actions / month",
-      "3 tool integrations",
-      "Community support",
-      "Basic observability",
+      "Personalized program",
+      "Full app access",
+      "500+ exercise videos",
+      "Nutrition guidelines",
+      "Monthly plan updates",
     ],
-    cta: "START FREE",
+    cta: "START NOW",
     highlight: false,
   },
   {
     id: "02",
-    name: "PRO",
-    tagline: "Agents in production",
-    price: { mo: 49, yr: 39 },
+    name: "1-ON-1 COACHING",
+    tagline: "Most popular",
+    price: { mo: 149, yr: 119 },
     features: [
-      "Unlimited agents",
-      "5M agent actions / month",
-      "50+ integrations",
-      "Priority support",
-      "Full audit trail",
-      "Multi-agent workflows",
-      "Custom memory scopes",
+      "Everything in Self-Guided",
+      "Dedicated personal coach",
+      "Custom macro nutrition plan",
+      "Weekly check-ins",
+      "Unlimited coach messaging",
+      "Video form reviews",
+      "90-day results guarantee",
     ],
-    cta: "START TRIAL",
+    cta: "GET MATCHED",
     highlight: true,
   },
   {
     id: "03",
-    name: "ENTERPRISE",
-    tagline: "Scale without limits",
-    price: { mo: null, yr: null },
+    name: "ELITE",
+    tagline: "Maximum accountability",
+    price: { mo: 299, yr: 249 },
     features: [
-      "Everything in Pro",
-      "Unlimited agent actions",
-      "Dedicated infrastructure",
-      "24/7 dedicated support",
-      "On-premise option",
-      "Custom SLA guarantee",
-      "SSO & SCIM",
-      "Custom contracts",
+      "Everything in 1-on-1",
+      "2x weekly video calls",
+      "Same-day coach responses",
+      "Bloodwork & recovery review",
+      "Custom supplement protocol",
+      "Priority scheduling",
+      "Quarterly strategy sessions",
     ],
-    cta: "CONTACT SALES",
+    cta: "APPLY NOW",
     highlight: false,
   },
 ];
@@ -78,10 +77,10 @@ export function PricingSection() {
           className={`border-b border-[#1e1e1e] py-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 transition-all duration-500 ${vis ? "opacity-100" : "opacity-0"}`}
         >
           <div>
-            <span className="sys-tag mb-3 block">PRICING</span>
+            <span className="sys-tag mb-3 block">MEMBERSHIP</span>
             <h2 className="font-display text-6xl lg:text-8xl leading-[0.88] tracking-tight text-[#f2ede6]">
-              SCALE AGENTS.<br />
-              <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>NOT YOUR BILL.</span>
+              INVEST IN<br />
+              <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>YOURSELF.</span>
             </h2>
           </div>
 
@@ -91,12 +90,13 @@ export function PricingSection() {
             <button
               onClick={() => setAnnual(!annual)}
               className="relative w-12 h-6 bg-[#1e1e1e] border border-[#2e2e2e] flex items-center"
+              aria-label="Toggle annual billing"
             >
-              <div className={`w-4 h-4 bg-[#2196f3] transition-transform duration-300 mx-1 ${annual ? "translate-x-5" : "translate-x-0"}`} />
+              <div className={`w-4 h-4 bg-[#c6f752] transition-transform duration-300 mx-1 ${annual ? "translate-x-5" : "translate-x-0"}`} />
             </button>
             <span className={`font-mono text-[11px] tracking-widest transition-colors ${annual ? "text-[#f2ede6]" : "text-[#3a3a3a]"}`}>ANNUAL</span>
             {annual && (
-              <span className="font-mono text-[9px] tracking-widest border border-[#2196f3]/40 text-[#2196f3] px-2 py-1">
+              <span className="font-mono text-[9px] tracking-widest border border-[#c6f752]/40 text-[#c6f752] px-2 py-1">
                 SAVE_20%
               </span>
             )}
@@ -114,14 +114,14 @@ export function PricingSection() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               {p.highlight && (
-                <div className="absolute top-0 left-0 right-0 h-px bg-[#2196f3]" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-[#c6f752]" />
               )}
 
               <div className="p-8 border-b border-[#1e1e1e]">
                 <div className="flex items-start justify-between mb-4">
                   <span className="font-mono text-[9px] text-[#3a3a3a]">{p.id}</span>
                   {p.highlight && (
-                    <span className="font-mono text-[9px] tracking-widest border border-[#2196f3]/40 text-[#2196f3] px-2 py-1">
+                    <span className="font-mono text-[9px] tracking-widest border border-[#c6f752]/40 text-[#c6f752] px-2 py-1">
                       POPULAR
                     </span>
                   )}
@@ -131,22 +131,18 @@ export function PricingSection() {
               </div>
 
               <div className="p-8 border-b border-[#1e1e1e]">
-                {p.price.mo !== null ? (
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-display text-6xl text-[#f2ede6]">
-                      ${annual ? p.price.yr : p.price.mo}
-                    </span>
-                    <span className="font-mono text-[10px] text-[#3a3a3a]">/MONTH</span>
-                  </div>
-                ) : (
-                  <span className="font-display text-5xl text-[#f2ede6]">CUSTOM</span>
-                )}
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-6xl text-[#f2ede6]">
+                    ${annual ? p.price.yr : p.price.mo}
+                  </span>
+                  <span className="font-mono text-[10px] text-[#3a3a3a]">/MONTH</span>
+                </div>
               </div>
 
               <ul className="p-8 space-y-3 border-b border-[#1e1e1e]">
                 {p.features.map(f => (
                   <li key={f} className="flex items-start gap-3">
-                    <span className="text-[#2196f3] font-mono text-[10px] mt-0.5 shrink-0">+</span>
+                    <span className="text-[#c6f752] font-mono text-[10px] mt-0.5 shrink-0">+</span>
                     <span className="font-mono text-[11px] text-[#5a5a5a]">{f}</span>
                   </li>
                 ))}
@@ -157,8 +153,8 @@ export function PricingSection() {
                   href="#"
                   className={`w-full flex items-center justify-between font-mono text-[11px] tracking-widest px-5 py-4 transition-colors group ${
                     p.highlight
-                      ? "bg-[#2196f3] text-[#050505] hover:bg-[#fbbf24] font-semibold"
-                      : "border border-[#2e2e2e] text-[#5a5a5a] hover:border-[#2196f3]/40 hover:text-[#2196f3]"
+                      ? "bg-[#c6f752] text-[#050505] hover:bg-[#d4ff6b] font-semibold"
+                      : "border border-[#2e2e2e] text-[#5a5a5a] hover:border-[#c6f752]/40 hover:text-[#c6f752]"
                   }`}
                 >
                   {p.cta}
@@ -170,7 +166,7 @@ export function PricingSection() {
         </div>
 
         <p className="py-5 text-center font-mono text-[10px] text-[#3a3a3a]">
-          ALL PLANS INCLUDE E2E ENCRYPTION · SOC 2 COMPLIANCE · 99.97% UPTIME SLA
+          ALL PLANS INCLUDE THE APP · NO CONTRACTS · CANCEL ANYTIME · 90-DAY GUARANTEE
         </p>
       </div>
     </section>

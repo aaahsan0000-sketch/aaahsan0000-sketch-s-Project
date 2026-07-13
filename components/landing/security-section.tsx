@@ -2,32 +2,32 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const CERTS = ["SOC_2_TYPE_II", "ISO_27001", "HIPAA", "GDPR", "CCPA"];
+const CERTS = ["NASM_CPT", "NSCA_CSCS", "PRECISION_NUTRITION", "ISSA", "RD_CERTIFIED"];
 
 const FEATURES = [
   {
     id: "01",
-    tag: "ISOLATION",
-    title: "AGENT SANDBOXING",
-    desc: "Every agent runs in an isolated execution environment. No cross-contamination, no data leakage between pipelines.",
+    tag: "EXPERTISE",
+    title: "CERTIFIED COACHES",
+    desc: "Every coach is credentialed, vetted, and experienced. No influencers — just professionals who've helped thousands reach their goals.",
   },
   {
     id: "02",
-    tag: "ACCESS CONTROL",
-    title: "PERMISSION SCOPES",
-    desc: "Define exactly what tools, APIs, and data each agent can access. Least-privilege by default, audited always.",
+    tag: "EVIDENCE",
+    title: "SCIENCE-BASED",
+    desc: "Programming grounded in exercise science and real research. Progressive overload, sustainable nutrition — nothing faddy or extreme.",
   },
   {
     id: "03",
-    tag: "OBSERVABILITY",
-    title: "FULL AUDIT TRAIL",
-    desc: "Every agent action, decision, and tool call is logged, traceable, and reviewable in real time. Fully immutable.",
+    tag: "SUPPORT",
+    title: "ALWAYS IN REACH",
+    desc: "Message your coach any day of the week and get answers fast. Weekly check-ins keep you moving, motivated, and accountable.",
   },
   {
     id: "04",
-    tag: "COMPLIANCE",
-    title: "ENTERPRISE CERTS",
-    desc: "SOC 2 Type II, ISO 27001, HIPAA, GDPR, and CCPA compliance. Independently audited with continuous monitoring.",
+    tag: "GUARANTEE",
+    title: "RESULTS OR REFUND",
+    desc: "Follow your plan for 90 days. If you don't see real progress, we'll refund you — no forms, no fine print, no hassle.",
   },
 ];
 
@@ -53,18 +53,17 @@ export function SecuritySection() {
           className={`border-b border-[#1e1e1e] py-8 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 transition-all duration-500 ${vis ? "opacity-100" : "opacity-0"}`}
         >
           <div>
-            <span className="sys-tag mb-3 block">TRUST &amp; SECURITY</span>
+            <span className="sys-tag mb-3 block">WHY FITNESS REPUBLIC</span>
             <h2 className="font-display text-6xl lg:text-8xl leading-[0.88] tracking-tight text-[#f2ede6]">
-              AGENTS YOU<br />
+              COACHING YOU<br />
               <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>CAN TRUST</span>
             </h2>
           </div>
-          {/* Cert badges */}
           <div className="flex flex-wrap gap-2">
             {CERTS.map((c, i) => (
               <span
                 key={c}
-                className={`font-mono text-[9px] tracking-widest border border-[#2e2e2e] px-3 py-2 text-[#5a5a5a] hover:border-[#2196f3]/40 hover:text-[#2196f3] transition-all duration-200 cursor-default ${
+                className={`font-mono text-[9px] tracking-widest border border-[#2e2e2e] px-3 py-2 text-[#5a5a5a] hover:border-[#c6f752]/40 hover:text-[#c6f752] transition-all duration-200 cursor-default ${
                   vis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
                 }`}
                 style={{ transitionDelay: `${i * 50 + 200}ms` }}
@@ -85,16 +84,13 @@ export function SecuritySection() {
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* Distinct dot animation per card */}
               <div className="h-10 mb-5 relative overflow-hidden">
-
-                {/* Card 01 — scattered grid blink (opacity driven purely by keyframe) */}
                 {i === 0 && (
                   <div className="grid grid-cols-8 gap-[4px] w-full h-full content-start pt-1">
                     {Array.from({ length: 24 }).map((_, d) => (
                       <span
                         key={d}
-                        className="block w-[3px] h-[3px] rounded-full bg-[#2196f3]"
+                        className="block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
                         style={{
                           animationName: "dot-blink",
                           animationDuration: `${1.2 + (d % 4) * 0.4}s`,
@@ -108,7 +104,6 @@ export function SecuritySection() {
                   </div>
                 )}
 
-                {/* Card 02 — orbit ring (opacity driven purely by keyframe) */}
                 {i === 1 && (
                   <div className="relative w-10 h-10">
                     {Array.from({ length: 8 }).map((_, d) => {
@@ -119,7 +114,7 @@ export function SecuritySection() {
                       return (
                         <span
                           key={d}
-                          className="absolute block w-[3px] h-[3px] rounded-full bg-[#2196f3]"
+                          className="absolute block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
                           style={{
                             left: x,
                             top: y,
@@ -133,17 +128,16 @@ export function SecuritySection() {
                         />
                       );
                     })}
-                    <span className="absolute block w-[3px] h-[3px] rounded-full bg-[#2196f3]" style={{ left: 19, top: 19 }} />
+                    <span className="absolute block w-[3px] h-[3px] rounded-full bg-[#c6f752]" style={{ left: 19, top: 19 }} />
                   </div>
                 )}
 
-                {/* Card 03 — horizontal scan sweep using scaleX (no inline opacity) */}
                 {i === 2 && (
                   <div className="flex items-center gap-[5px] h-full">
                     {Array.from({ length: 14 }).map((_, d) => (
                       <span
                         key={d}
-                        className="block w-[3px] h-[3px] rounded-full bg-[#2196f3]"
+                        className="block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
                         style={{
                           animationName: "dot-scan",
                           animationDuration: "2s",
@@ -157,7 +151,6 @@ export function SecuritySection() {
                   </div>
                 )}
 
-                {/* Card 04 — stepped equalizer bars */}
                 {i === 3 && (() => {
                   const heights = [6, 14, 22, 28, 18, 32, 10, 26, 20, 8, 30, 16];
                   return (
@@ -165,7 +158,7 @@ export function SecuritySection() {
                       {heights.map((h, d) => (
                         <span
                           key={d}
-                          className="block w-[4px] rounded-sm bg-[#2196f3]"
+                          className="block w-[4px] rounded-sm bg-[#c6f752]"
                           style={{
                             height: h,
                             opacity: 0.3 + (h / 32) * 0.7,
@@ -183,7 +176,7 @@ export function SecuritySection() {
                 <span className="sys-tag text-[9px]">{f.tag}</span>
                 <span className="font-mono text-[9px] text-[#2e2e2e]">{f.id}</span>
               </div>
-              <h3 className="font-display text-2xl leading-[0.9] text-[#f2ede6] mb-3 group-hover:text-[#2196f3] transition-colors">
+              <h3 className="font-display text-2xl leading-[0.9] text-[#f2ede6] mb-3 group-hover:text-[#c6f752] transition-colors">
                 {f.title}
               </h3>
               <p className="text-sm text-[#5a5a5a] leading-relaxed">{f.desc}</p>
@@ -194,10 +187,10 @@ export function SecuritySection() {
         {/* Bottom note */}
         <div className="py-5 flex items-center justify-between">
           <span className="font-mono text-[10px] text-[#3a3a3a]">
-            EVERY AGENT ACTION IS CRYPTOGRAPHICALLY SIGNED &amp; IMMUTABLY LOGGED
+            NO LONG-TERM CONTRACTS &amp; A 90-DAY RESULTS GUARANTEE ON EVERY PLAN
           </span>
-          <a href="#" className="font-mono text-[10px] text-[#2196f3] hover:underline tracking-wider">
-            SECURITY WHITEPAPER →
+          <a href="#pricing" className="font-mono text-[10px] text-[#c6f752] hover:underline tracking-wider">
+            SEE THE GUARANTEE →
           </a>
         </div>
       </div>

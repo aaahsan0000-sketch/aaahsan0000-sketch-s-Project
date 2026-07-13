@@ -49,64 +49,33 @@ function AnimCounter({
   );
 }
 
-// Each day: 0 = healthy, 1 = degraded, 2 = incident
-const UPTIME_DATA: number[] = (() => {
+// Consistency heatmap: 0 = trained, 1 = light day, 2 = missed
+const STREAK_DATA: number[] = (() => {
   const d: number[] = [];
   for (let i = 0; i < 90; i++) {
-    if (i === 14 || i === 51) d.push(2);      // incident
-    else if (i === 22 || i === 63 || i === 77) d.push(1); // degraded
+    if (i === 19 || i === 58) d.push(2);
+    else if (i % 7 === 2 || i % 7 === 6) d.push(1);
     else d.push(0);
   }
   return d;
 })();
 
 const STATUS_COLOR: Record<number, string> = {
-  0: "#22c55e",
-  1: "#f59e0b",
-  2: "#ef4444",
+  0: "#c6f752",
+  1: "#84cc16",
+  2: "#3a3a3a",
 };
 
 const METRICS = [
-  {
-    end: 15,
-    suffix: "",
-    label: "AGENT ACTIONS / DAY",
-    sub: "across all running pipelines",
-    display: "1.5M+",
-  },
-  {
-    end: 9997,
-    suffix: "",
-    label: "COMPLETION RATE",
-    sub: "out of 10,000 tasks",
-    display: "99.97%",
-  },
-  {
-    end: 78,
-    suffix: "ms",
-    label: "AVG SPAWN TIME",
-    sub: "from trigger to live agent",
-  },
-  {
-    end: 10400,
-    suffix: "+",
-    label: "PEAK CONCURRENCY",
-    sub: "simultaneous agents",
-  },
+  { end: 12000, suffix: "+", label: "MEMBERS TRANSFORMED", sub: "and counting worldwide" },
+  { end: 94,    suffix: "%", label: "HIT THEIR GOAL", sub: "within their first program" },
+  { end: 340000, suffix: "+", label: "COACHING HOURS", sub: "delivered by our team", display: "340K+" },
+  { end: 49,    suffix: "", label: "AVG LBS LOST", sub: "top transformation this year", display: "4.8★" },
 ];
 
 export function MetricsSection() {
   const [vis, setVis] = useState(false);
-  const [time, setTime] = useState("");
   const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const tick = () =>
-      setTime(new Date().toLocaleTimeString("en-US", { hour12: false }));
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -130,25 +99,20 @@ export function MetricsSection() {
           }`}
         >
           <div>
-            <span className="sys-tag mb-3 block">LIVE METRICS</span>
+            <span className="sys-tag mb-3 block">THE RESULTS</span>
             <h2 className="font-display text-6xl lg:text-8xl leading-[0.88] tracking-tight text-[#f2ede6]">
-              SCALE YOU
+              RESULTS YOU
               <br />
-              <span
-                style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}
-              >
-                CAN MEASURE
-              </span>
+              <span style={{ WebkitTextStroke: "1px #3a3a3a", color: "transparent" }}>CAN SEE</span>
             </h2>
           </div>
           <div className="flex items-center gap-3 font-mono text-[10px] text-[#3a3a3a]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block animate-pulse" />
-            <span className="text-[#22c55e]">LIVE</span>
-            <span className="tabular-nums">{time}</span>
+            <span className="text-[#22c55e]">UPDATED WEEKLY</span>
           </div>
         </div>
 
-        {/* Metrics grid — each cell has a fixed min-height and overflow-hidden to prevent bleed */}
+        {/* Metrics grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 border-b border-[#1e1e1e]">
           {METRICS.map((m, i) => (
             <div
@@ -165,7 +129,7 @@ export function MetricsSection() {
               ) : (
                 <AnimCounter end={m.end} suffix={m.suffix} />
               )}
-              <div className="mt-3 font-mono text-[10px] text-[#2196f3] tracking-[0.18em]">
+              <div className="mt-3 font-mono text-[10px] text-[#c6f752] tracking-[0.18em]">
                 {m.label}
               </div>
               <div className="mt-1 font-mono text-[10px] text-[#3a3a3a]">
@@ -175,30 +139,26 @@ export function MetricsSection() {
           ))}
         </div>
 
-        {/* Uptime — pill-bar style matching reference design */}
+        {/* Consistency streak */}
         <div className="py-6">
           <div className="flex items-center justify-between mb-3">
             <span className="font-mono text-[10px] text-[#3a3a3a] tracking-widest uppercase">
-              Uptime last 90 days
+              Member consistency · last 90 days
             </span>
-            <span className="font-mono text-[10px] text-[#22c55e] tracking-widest">
-              99.97%
+            <span className="font-mono text-[10px] text-[#c6f752] tracking-widest">
+              91% adherence
             </span>
           </div>
           <div className="flex gap-[3px] items-end h-10">
-            {UPTIME_DATA.map((status, i) => (
+            {STREAK_DATA.map((status, i) => (
               <div
                 key={i}
                 title={
-                  status === 0
-                    ? "Operational"
-                    : status === 1
-                    ? "Degraded"
-                    : "Incident"
+                  status === 0 ? "Trained" : status === 1 ? "Light day" : "Rest"
                 }
                 className="flex-1 rounded-sm transition-opacity hover:opacity-80 cursor-default"
                 style={{
-                  height: status === 2 ? "100%" : status === 1 ? "80%" : "70%",
+                  height: status === 0 ? "100%" : status === 1 ? "70%" : "40%",
                   background: STATUS_COLOR[status],
                   alignSelf: "flex-end",
                   opacity: vis ? 1 : 0,
@@ -208,7 +168,7 @@ export function MetricsSection() {
             ))}
           </div>
           <div className="flex justify-between mt-2">
-            <span className="font-mono text-[9px] text-[#3a3a3a]">90 days</span>
+            <span className="font-mono text-[9px] text-[#3a3a3a]">90 days ago</span>
             <span className="font-mono text-[9px] text-[#3a3a3a]">Today</span>
           </div>
         </div>

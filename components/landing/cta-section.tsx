@@ -42,7 +42,7 @@ function DotWaveCanvas() {
 
           ctx.beginPath();
           ctx.arc(bx, by + dy, DOT_R, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(33,150,243,${alpha.toFixed(3)})`;
+          ctx.fillStyle = `rgba(198,247,82,${alpha.toFixed(3)})`;
           ctx.fill();
         }
       }
@@ -86,49 +86,49 @@ export function CtaSection() {
           <DotWaveCanvas />
 
           {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-r border-b border-[#2196f3]/30" />
-          <div className="absolute top-0 right-0 w-16 h-16 border-l border-b border-[#2196f3]/30" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-r border-t border-[#2196f3]/30" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-l border-t border-[#2196f3]/30" />
+          <div className="absolute top-0 left-0 w-16 h-16 border-r border-b border-[#c6f752]/30" />
+          <div className="absolute top-0 right-0 w-16 h-16 border-l border-b border-[#c6f752]/30" />
+          <div className="absolute bottom-0 left-0 w-16 h-16 border-r border-t border-[#c6f752]/30" />
+          <div className="absolute bottom-0 right-0 w-16 h-16 border-l border-t border-[#c6f752]/30" />
 
           {/* Subtle glow */}
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(33,150,243,0.04) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(198,247,82,0.04) 0%, transparent 70%)" }}
           />
 
           <div className="relative z-10 px-8 lg:px-20 py-16 lg:py-24 text-center">
             {/* Status */}
             <div className="flex items-center justify-center gap-3 mb-10">
               <span className="status-pulse w-2 h-2 rounded-full bg-[#22c55e] inline-block" />
-              <span className="font-mono text-[11px] tracking-[0.2em] text-[#22c55e]">JARVIS RUNTIME · READY</span>
+              <span className="font-mono text-[11px] tracking-[0.2em] text-[#22c55e]">COACHING SLOTS · OPEN</span>
             </div>
 
             {/* Headline */}
             <h2 className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-tight text-[#f2ede6] uppercase mb-4">
-              YOUR FIRST<br />
-              <span className="text-[#2196f3]">AGENT</span><br />
+              YOUR BEST<br />
+              <span className="text-[#c6f752]">SHAPE</span><br />
               STARTS NOW.
             </h2>
 
             <p className="font-mono text-sm text-[#5a5a5a] mb-12 max-w-lg mx-auto leading-relaxed">
-              Join 4,200+ engineers deploying autonomous AI workflows. Free tier includes 10K agent actions/month. No credit card required.
+              Join 12,000+ members training with a coach in their corner. Get matched today and start your first program this week. 90-day results guarantee.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#"
-                className="group inline-flex items-center gap-4 bg-[#2196f3] text-[#050505] font-mono text-sm tracking-widest px-8 py-5 hover:bg-[#fbbf24] transition-colors font-semibold"
+                href="#pricing"
+                className="group inline-flex items-center gap-4 bg-[#c6f752] text-[#050505] font-mono text-sm tracking-widest px-8 py-5 hover:bg-[#d4ff6b] transition-colors font-semibold"
               >
-                DEPLOY FIRST AGENT
+                START YOUR JOURNEY
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a
-                href="#"
-                className="group inline-flex items-center gap-4 border border-[#2e2e2e] text-[#5a5a5a] font-mono text-sm tracking-widest px-8 py-5 hover:border-[#2196f3]/40 hover:text-[#2196f3] transition-colors"
+                href="#features"
+                className="group inline-flex items-center gap-4 border border-[#2e2e2e] text-[#5a5a5a] font-mono text-sm tracking-widest px-8 py-5 hover:border-[#c6f752]/40 hover:text-[#c6f752] transition-colors"
               >
-                TALK TO SALES
+                BOOK A FREE CALL
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
             </div>
@@ -136,13 +136,13 @@ export function CtaSection() {
             {/* Social proof row */}
             <div className="flex items-center justify-center gap-8 mt-10 flex-wrap">
               {[
-                { v: "4.2K+",  l: "engineers" },
-                { v: "1.2B+",  l: "actions / day" },
-                { v: "99.97%", l: "uptime SLA" },
-                { v: "SOC 2",  l: "certified" },
+                { v: "12K+",   l: "members" },
+                { v: "94%",    l: "hit their goal" },
+                { v: "4.8★",   l: "member rating" },
+                { v: "90-DAY", l: "guarantee" },
               ].map(s => (
                 <div key={s.l} className="text-center">
-                  <div className="font-display text-2xl text-[#2196f3]">{s.v}</div>
+                  <div className="font-display text-2xl text-[#c6f752]">{s.v}</div>
                   <div className="font-mono text-[9px] text-[#3a3a3a] tracking-widest">{s.l}</div>
                 </div>
               ))}

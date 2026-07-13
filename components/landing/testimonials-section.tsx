@@ -4,42 +4,42 @@ import { useEffect, useState, useRef } from "react";
 
 const TESTIMONIALS = [
   {
-    quote: "JARVIS cut our agentic workflow build time from months to days. The orchestration layer is exactly what enterprise scale demands.",
-    author: "Sarah Chen",
-    role: "CTO",
-    company: "MERIDIAN_LABS",
-    metric: "12X",
-    metricLabel: "FASTER DELIVERY",
+    quote: "I'd tried every app and program out there. Having a real coach adjust my plan every week is what finally made it stick. Down 42 pounds and stronger than in my twenties.",
+    author: "David Marsh",
+    role: "Lost 42 lbs",
+    company: "9 MONTHS",
+    metric: "-42",
+    metricLabel: "POUNDS LOST",
   },
   {
-    quote: "We run 8,000 concurrent research agents in production. JARVIS just handles it. Zero tuning, zero ops overhead.",
+    quote: "The nutrition coaching changed everything. No more crash diets — just targets that fit my life. I actually enjoy the process now, and the results speak for themselves.",
+    author: "Priya Nair",
+    role: "Body recomposition",
+    company: "6 MONTHS",
+    metric: "-8%",
+    metricLabel: "BODY FAT",
+  },
+  {
+    quote: "As a busy dad I needed something that worked around my schedule. My coach built training I could do at home in 45 minutes. First pull-up at 38 — never thought I'd get there.",
     author: "Marcus Webb",
-    role: "Engineering Lead",
-    company: "FLUX_SYSTEMS",
-    metric: "8K",
-    metricLabel: "AGENTS IN PROD",
+    role: "Strength & mobility",
+    company: "12 MONTHS",
+    metric: "+55",
+    metricLabel: "LBS ON SQUAT",
   },
   {
-    quote: "The audit trail alone was worth switching. Our compliance team can finally see exactly what every agent did and why.",
+    quote: "Postpartum, I felt lost in the gym. The accountability and form checks gave me confidence I didn't have before. I feel like an athlete again.",
     author: "Elena Rodriguez",
-    role: "VP Engineering",
-    company: "BEACON_AI",
+    role: "Return to training",
+    company: "7 MONTHS",
     metric: "100%",
-    metricLabel: "AUDIT COVERAGE",
-  },
-  {
-    quote: "Multi-agent reasoning was a black box before JARVIS. Now we trace every decision, every tool call. Absolute game changer.",
-    author: "James Liu",
-    role: "Founder",
-    company: "PRISM_ANALYTICS",
-    metric: "∞",
-    metricLabel: "OBSERVABILITY",
+    metricLabel: "CONFIDENCE BACK",
   },
 ];
 
 const LOGOS = [
-  "MERIDIAN_LABS", "FLUX_SYSTEMS", "BEACON_AI", "PRISM_ANALYTICS",
-  "NOVA_INTELLIGENCE", "QUANTUM_AGENTS", "ATLAS_DIGITAL", "VERTEX_AI_CO",
+  "MEN'S HEALTH", "SHAPE", "RUNNER'S WORLD", "GQ FITNESS",
+  "SELF", "OUTSIDE", "WOMEN'S HEALTH", "MUSCLE & FITNESS",
 ];
 
 export function TestimonialsSection() {
@@ -78,7 +78,7 @@ export function TestimonialsSection() {
         <div
           className={`border-b border-[#1e1e1e] py-8 flex items-end justify-between transition-all duration-500 ${vis ? "opacity-100" : "opacity-0"}`}
         >
-          <span className="sys-tag">FIELD REPORTS</span>
+          <span className="sys-tag">TRANSFORMATIONS</span>
           <span className="font-mono text-[10px] text-[#3a3a3a]">
             {String(active + 1).padStart(2, "0")} / {String(TESTIMONIALS.length).padStart(2, "0")}
           </span>
@@ -96,7 +96,7 @@ export function TestimonialsSection() {
               </p>
               <footer className="flex items-center gap-4">
                 <div className="w-10 h-10 border border-[#2e2e2e] flex items-center justify-center bg-[#0e0e0e]">
-                  <span className="font-display text-lg text-[#2196f3]">{t.author.charAt(0)}</span>
+                  <span className="font-display text-lg text-[#c6f752]">{t.author.charAt(0)}</span>
                 </div>
                 <div>
                   <p className="font-mono text-[11px] text-[#f2ede6] tracking-wider">{t.author}</p>
@@ -110,24 +110,23 @@ export function TestimonialsSection() {
 
           {/* Metric + nav */}
           <div className="flex flex-col">
-            {/* Metric */}
             <div
               className={`flex-1 p-8 border-b border-[#1e1e1e] row-hover transition-all duration-250 ${fading ? "opacity-0" : "opacity-100"}`}
             >
-              <span className="sys-tag text-[9px] mb-4 block">KEY_RESULT</span>
-              <div className="font-display text-6xl text-[#2196f3]">{t.metric}</div>
+              <span className="sys-tag text-[9px] mb-4 block">THE RESULT</span>
+              <div className="font-display text-6xl text-[#c6f752]">{t.metric}</div>
               <div className="font-mono text-[10px] text-[#3a3a3a] tracking-widest mt-2">{t.metricLabel}</div>
             </div>
 
-            {/* Nav dots */}
             <div className="p-6 flex items-center gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { setFading(true); setTimeout(() => { setActive(i); setFading(false); }, 250); }}
                   className={`h-1 transition-all duration-300 ${
-                    i === active ? "w-8 bg-[#2196f3]" : "w-2 bg-[#2e2e2e] hover:bg-[#5a5a5a]"
+                    i === active ? "w-8 bg-[#c6f752]" : "w-2 bg-[#2e2e2e] hover:bg-[#5a5a5a]"
                   }`}
+                  aria-label={`Show transformation ${i + 1}`}
                 />
               ))}
             </div>
@@ -136,7 +135,7 @@ export function TestimonialsSection() {
 
       </div>
 
-      {/* Logo marquee — full viewport width */}
+      {/* Press marquee */}
       <div className="border-t border-[#1e1e1e] py-5 overflow-hidden">
         <div className="marquee-fast flex gap-16 whitespace-nowrap">
           {[...Array(2)].map((_, ri) => (
