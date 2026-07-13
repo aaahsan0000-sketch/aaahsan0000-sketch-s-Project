@@ -63,7 +63,7 @@ export function SecuritySection() {
             {CERTS.map((c, i) => (
               <span
                 key={c}
-                className={`font-mono text-[9px] tracking-widest border border-[#2e2e2e] px-3 py-2 text-[#5a5a5a] hover:border-[#c6f752]/40 hover:text-[#c6f752] transition-all duration-200 cursor-default ${
+                className={`font-mono text-[9px] tracking-widest border border-[#2e2e2e] px-3 py-2 text-[#5a5a5a] hover:border-[#c8a765]/40 hover:text-[#c8a765] transition-all duration-200 cursor-default ${
                   vis ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
                 }`}
                 style={{ transitionDelay: `${i * 50 + 200}ms` }}
@@ -90,7 +90,7 @@ export function SecuritySection() {
                     {Array.from({ length: 24 }).map((_, d) => (
                       <span
                         key={d}
-                        className="block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
+                        className="block w-[3px] h-[3px] rounded-full bg-[#c8a765]"
                         style={{
                           animationName: "dot-blink",
                           animationDuration: `${1.2 + (d % 4) * 0.4}s`,
@@ -114,7 +114,7 @@ export function SecuritySection() {
                       return (
                         <span
                           key={d}
-                          className="absolute block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
+                          className="absolute block w-[3px] h-[3px] rounded-full bg-[#c8a765]"
                           style={{
                             left: x,
                             top: y,
@@ -128,7 +128,7 @@ export function SecuritySection() {
                         />
                       );
                     })}
-                    <span className="absolute block w-[3px] h-[3px] rounded-full bg-[#c6f752]" style={{ left: 19, top: 19 }} />
+                    <span className="absolute block w-[3px] h-[3px] rounded-full bg-[#c8a765]" style={{ left: 19, top: 19 }} />
                   </div>
                 )}
 
@@ -137,7 +137,7 @@ export function SecuritySection() {
                     {Array.from({ length: 14 }).map((_, d) => (
                       <span
                         key={d}
-                        className="block w-[3px] h-[3px] rounded-full bg-[#c6f752]"
+                        className="block w-[3px] h-[3px] rounded-full bg-[#c8a765]"
                         style={{
                           animationName: "dot-scan",
                           animationDuration: "2s",
@@ -158,7 +158,7 @@ export function SecuritySection() {
                       {heights.map((h, d) => (
                         <span
                           key={d}
-                          className="block w-[4px] rounded-sm bg-[#c6f752]"
+                          className="block w-[4px] rounded-sm bg-[#c8a765]"
                           style={{
                             height: h,
                             opacity: 0.3 + (h / 32) * 0.7,
@@ -176,7 +176,7 @@ export function SecuritySection() {
                 <span className="sys-tag text-[9px]">{f.tag}</span>
                 <span className="font-mono text-[9px] text-[#2e2e2e]">{f.id}</span>
               </div>
-              <h3 className="font-display text-2xl leading-[0.9] text-[#f2ede6] mb-3 group-hover:text-[#c6f752] transition-colors">
+              <h3 className="font-display text-2xl leading-[0.9] text-[#f2ede6] mb-3 group-hover:text-[#c8a765] transition-colors">
                 {f.title}
               </h3>
               <p className="text-sm text-[#5a5a5a] leading-relaxed">{f.desc}</p>
@@ -189,7 +189,7 @@ export function SecuritySection() {
           <span className="font-mono text-[10px] text-[#3a3a3a]">
             NO LONG-TERM CONTRACTS &amp; A 90-DAY RESULTS GUARANTEE ON EVERY PLAN
           </span>
-          <a href="#pricing" className="font-mono text-[10px] text-[#c6f752] hover:underline tracking-wider">
+          <a href="#pricing" className="font-mono text-[10px] text-[#c8a765] hover:underline tracking-wider">
             SEE THE GUARANTEE →
           </a>
         </div>

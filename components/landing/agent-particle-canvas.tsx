@@ -13,7 +13,7 @@ interface Particle {
   type: "node" | "relay" | "hub";
 }
 
-const BLUE   = "198,247,82";
+const BLUE   = "200,167,101";
 const GREEN  = "34,197,94";
 const WHITE  = "242,237,230";
 

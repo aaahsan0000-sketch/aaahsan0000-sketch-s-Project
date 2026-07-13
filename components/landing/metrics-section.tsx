@@ -61,7 +61,7 @@ const STREAK_DATA: number[] = (() => {
 })();
 
 const STATUS_COLOR: Record<number, string> = {
-  0: "#c6f752",
+  0: "#c8a765",
   1: "#84cc16",
   2: "#3a3a3a",
 };
@@ -107,8 +107,8 @@ export function MetricsSection() {
             </h2>
           </div>
           <div className="flex items-center gap-3 font-mono text-[10px] text-[#3a3a3a]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block animate-pulse" />
-            <span className="text-[#22c55e]">UPDATED WEEKLY</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c8a765] inline-block animate-pulse" />
+            <span className="text-[#c8a765]">UPDATED WEEKLY</span>
           </div>
         </div>
 
@@ -129,7 +129,7 @@ export function MetricsSection() {
               ) : (
                 <AnimCounter end={m.end} suffix={m.suffix} />
               )}
-              <div className="mt-3 font-mono text-[10px] text-[#c6f752] tracking-[0.18em]">
+              <div className="mt-3 font-mono text-[10px] text-[#c8a765] tracking-[0.18em]">
                 {m.label}
               </div>
               <div className="mt-1 font-mono text-[10px] text-[#3a3a3a]">
@@ -145,7 +145,7 @@ export function MetricsSection() {
             <span className="font-mono text-[10px] text-[#3a3a3a] tracking-widest uppercase">
               Member consistency · last 90 days
             </span>
-            <span className="font-mono text-[10px] text-[#c6f752] tracking-widest">
+            <span className="font-mono text-[10px] text-[#c8a765] tracking-widest">
               91% adherence
             </span>
           </div>

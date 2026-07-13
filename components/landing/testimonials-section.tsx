@@ -96,7 +96,7 @@ export function TestimonialsSection() {
               </p>
               <footer className="flex items-center gap-4">
                 <div className="w-10 h-10 border border-[#2e2e2e] flex items-center justify-center bg-[#0e0e0e]">
-                  <span className="font-display text-lg text-[#c6f752]">{t.author.charAt(0)}</span>
+                  <span className="font-display text-lg text-[#c8a765]">{t.author.charAt(0)}</span>
                 </div>
                 <div>
                   <p className="font-mono text-[11px] text-[#f2ede6] tracking-wider">{t.author}</p>
@@ -114,7 +114,7 @@ export function TestimonialsSection() {
               className={`flex-1 p-8 border-b border-[#1e1e1e] row-hover transition-all duration-250 ${fading ? "opacity-0" : "opacity-100"}`}
             >
               <span className="sys-tag text-[9px] mb-4 block">THE RESULT</span>
-              <div className="font-display text-6xl text-[#c6f752]">{t.metric}</div>
+              <div className="font-display text-6xl text-[#c8a765]">{t.metric}</div>
               <div className="font-mono text-[10px] text-[#3a3a3a] tracking-widest mt-2">{t.metricLabel}</div>
             </div>
 
@@ -124,7 +124,7 @@ export function TestimonialsSection() {
                   key={i}
                   onClick={() => { setFading(true); setTimeout(() => { setActive(i); setFading(false); }, 250); }}
                   className={`h-1 transition-all duration-300 ${
-                    i === active ? "w-8 bg-[#c6f752]" : "w-2 bg-[#2e2e2e] hover:bg-[#5a5a5a]"
+                    i === active ? "w-8 bg-[#c8a765]" : "w-2 bg-[#2e2e2e] hover:bg-[#5a5a5a]"
                   }`}
                   aria-label={`Show transformation ${i + 1}`}
                 />

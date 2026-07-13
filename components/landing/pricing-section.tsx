@@ -92,11 +92,11 @@ export function PricingSection() {
               className="relative w-12 h-6 bg-[#1e1e1e] border border-[#2e2e2e] flex items-center"
               aria-label="Toggle annual billing"
             >
-              <div className={`w-4 h-4 bg-[#c6f752] transition-transform duration-300 mx-1 ${annual ? "translate-x-5" : "translate-x-0"}`} />
+              <div className={`w-4 h-4 bg-[#c8a765] transition-transform duration-300 mx-1 ${annual ? "translate-x-5" : "translate-x-0"}`} />
             </button>
             <span className={`font-mono text-[11px] tracking-widest transition-colors ${annual ? "text-[#f2ede6]" : "text-[#3a3a3a]"}`}>ANNUAL</span>
             {annual && (
-              <span className="font-mono text-[9px] tracking-widest border border-[#c6f752]/40 text-[#c6f752] px-2 py-1">
+              <span className="font-mono text-[9px] tracking-widest border border-[#c8a765]/40 text-[#c8a765] px-2 py-1">
                 SAVE_20%
               </span>
             )}
@@ -114,14 +114,14 @@ export function PricingSection() {
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               {p.highlight && (
-                <div className="absolute top-0 left-0 right-0 h-px bg-[#c6f752]" />
+                <div className="absolute top-0 left-0 right-0 h-px bg-[#c8a765]" />
               )}
 
               <div className="p-8 border-b border-[#1e1e1e]">
                 <div className="flex items-start justify-between mb-4">
                   <span className="font-mono text-[9px] text-[#3a3a3a]">{p.id}</span>
                   {p.highlight && (
-                    <span className="font-mono text-[9px] tracking-widest border border-[#c6f752]/40 text-[#c6f752] px-2 py-1">
+                    <span className="font-mono text-[9px] tracking-widest border border-[#c8a765]/40 text-[#c8a765] px-2 py-1">
                       POPULAR
                     </span>
                   )}
@@ -142,7 +142,7 @@ export function PricingSection() {
               <ul className="p-8 space-y-3 border-b border-[#1e1e1e]">
                 {p.features.map(f => (
                   <li key={f} className="flex items-start gap-3">
-                    <span className="text-[#c6f752] font-mono text-[10px] mt-0.5 shrink-0">+</span>
+                    <span className="text-[#c8a765] font-mono text-[10px] mt-0.5 shrink-0">+</span>
                     <span className="font-mono text-[11px] text-[#5a5a5a]">{f}</span>
                   </li>
                 ))}
@@ -153,8 +153,8 @@ export function PricingSection() {
                   href="#"
                   className={`w-full flex items-center justify-between font-mono text-[11px] tracking-widest px-5 py-4 transition-colors group ${
                     p.highlight
-                      ? "bg-[#c6f752] text-[#050505] hover:bg-[#d4ff6b] font-semibold"
-                      : "border border-[#2e2e2e] text-[#5a5a5a] hover:border-[#c6f752]/40 hover:text-[#c6f752]"
+                      ? "bg-[#c8a765] text-[#050505] hover:bg-[#dcc088] font-semibold"
+                      : "border border-[#2e2e2e] text-[#5a5a5a] hover:border-[#c8a765]/40 hover:text-[#c8a765]"
                   }`}
                 >
                   {p.cta}

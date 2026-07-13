@@ -25,7 +25,7 @@ export function HeroSection() {
       {/* Lime radial glow */}
       <div
         className="absolute inset-0 pointer-events-none z-0"
-        style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(198,247,82,0.06) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 50% 60% at 80% 50%, rgba(200,167,101,0.06) 0%, transparent 70%)" }}
       />
 
       <div className="relative z-20 max-w-[1400px] mx-auto px-6 lg:px-12 py-20 lg:py-28 w-full">
@@ -35,7 +35,7 @@ export function HeroSection() {
             <div
               className={`transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
             >
-              <p className="font-mono text-[11px] tracking-[0.2em] text-[#c6f752] mb-4">
+              <p className="font-mono text-[11px] tracking-[0.2em] text-[#c8a765] mb-4">
                 — PREMIUM ONLINE COACHING · BUILT FOR RESULTS
               </p>
 
@@ -47,7 +47,7 @@ export function HeroSection() {
               <div className="relative overflow-hidden h-[clamp(4rem,14vw,12rem)] leading-[0.88]">
                 <h1
                   key={verbIdx}
-                  className="font-display text-[clamp(4rem,14vw,12rem)] leading-[0.88] tracking-tight text-[#c6f752] uppercase absolute inset-0"
+                  className="font-display text-[clamp(4rem,14vw,12rem)] leading-[0.88] tracking-tight text-[#c8a765] uppercase absolute inset-0"
                   style={{ animation: "fade-up 0.5s ease forwards" }}
                 >
                   {VERBS[verbIdx]}
@@ -71,14 +71,14 @@ export function HeroSection() {
               <div className="flex flex-col sm:flex-row gap-3 mt-8 w-fit">
                 <a
                   href="#pricing"
-                  className="group inline-flex items-center gap-8 bg-[#c6f752] text-[#050505] font-mono text-sm tracking-widest px-6 py-4 hover:bg-[#d4ff6b] transition-colors font-semibold whitespace-nowrap"
+                  className="group inline-flex items-center gap-8 bg-[#c8a765] text-[#050505] font-mono text-sm tracking-widest px-6 py-4 hover:bg-[#dcc088] transition-colors font-semibold whitespace-nowrap"
                 >
                   START YOUR JOURNEY
                   <span className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
                 <a
                   href="#features"
-                  className="group inline-flex items-center gap-8 border border-[#1e1e1e] text-[#f2ede6] font-mono text-sm tracking-widest px-6 py-4 hover:border-[#c6f752]/40 hover:text-[#c6f752] transition-colors whitespace-nowrap"
+                  className="group inline-flex items-center gap-8 border border-[#1e1e1e] text-[#f2ede6] font-mono text-sm tracking-widest px-6 py-4 hover:border-[#c8a765]/40 hover:text-[#c8a765] transition-colors whitespace-nowrap"
                 >
                   VIEW PROGRAMS
                   <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -88,7 +88,7 @@ export function HeroSection() {
               {/* Social proof */}
               <div className="flex items-center gap-3 mt-5">
                 <div className="flex -space-x-2">
-                  {["#84cc16","#22c55e","#c6f752","#a3e635"].map((c) => (
+                  {["#84cc16","#c8a765","#c8a765","#a3e635"].map((c) => (
                     <div key={c} className="w-6 h-6 rounded-full border border-[#050505]" style={{ background: c }} />
                   ))}
                 </div>
@@ -120,7 +120,7 @@ export function HeroSection() {
                   "MONEY-BACK GUARANTEE",
                 ].map(item => (
                   <span key={item} className="flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-[#3a3a3a]">
-                    <span className="w-1 h-1 bg-[#c6f752] inline-block shrink-0" />
+                    <span className="w-1 h-1 bg-[#c8a765] inline-block shrink-0" />
                     {item}
                   </span>
                 ))}

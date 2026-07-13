@@ -42,7 +42,7 @@ function DotWaveCanvas() {
 
           ctx.beginPath();
           ctx.arc(bx, by + dy, DOT_R, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(198,247,82,${alpha.toFixed(3)})`;
+          ctx.fillStyle = `rgba(200,167,101,${alpha.toFixed(3)})`;
           ctx.fill();
         }
       }
@@ -86,28 +86,28 @@ export function CtaSection() {
           <DotWaveCanvas />
 
           {/* Corner accents */}
-          <div className="absolute top-0 left-0 w-16 h-16 border-r border-b border-[#c6f752]/30" />
-          <div className="absolute top-0 right-0 w-16 h-16 border-l border-b border-[#c6f752]/30" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-r border-t border-[#c6f752]/30" />
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-l border-t border-[#c6f752]/30" />
+          <div className="absolute top-0 left-0 w-16 h-16 border-r border-b border-[#c8a765]/30" />
+          <div className="absolute top-0 right-0 w-16 h-16 border-l border-b border-[#c8a765]/30" />
+          <div className="absolute bottom-0 left-0 w-16 h-16 border-r border-t border-[#c8a765]/30" />
+          <div className="absolute bottom-0 right-0 w-16 h-16 border-l border-t border-[#c8a765]/30" />
 
           {/* Subtle glow */}
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(198,247,82,0.04) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 100%, rgba(200,167,101,0.04) 0%, transparent 70%)" }}
           />
 
           <div className="relative z-10 px-8 lg:px-20 py-16 lg:py-24 text-center">
             {/* Status */}
             <div className="flex items-center justify-center gap-3 mb-10">
-              <span className="status-pulse w-2 h-2 rounded-full bg-[#22c55e] inline-block" />
-              <span className="font-mono text-[11px] tracking-[0.2em] text-[#22c55e]">COACHING SLOTS · OPEN</span>
+              <span className="status-pulse w-2 h-2 rounded-full bg-[#c8a765] inline-block" />
+              <span className="font-mono text-[11px] tracking-[0.2em] text-[#c8a765]">COACHING SLOTS · OPEN</span>
             </div>
 
             {/* Headline */}
             <h2 className="font-display text-[clamp(3.5rem,12vw,10rem)] leading-[0.88] tracking-tight text-[#f2ede6] uppercase mb-4">
               YOUR BEST<br />
-              <span className="text-[#c6f752]">SHAPE</span><br />
+              <span className="text-[#c8a765]">SHAPE</span><br />
               STARTS NOW.
             </h2>
 
@@ -119,14 +119,14 @@ export function CtaSection() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="#pricing"
-                className="group inline-flex items-center gap-4 bg-[#c6f752] text-[#050505] font-mono text-sm tracking-widest px-8 py-5 hover:bg-[#d4ff6b] transition-colors font-semibold"
+                className="group inline-flex items-center gap-4 bg-[#c8a765] text-[#050505] font-mono text-sm tracking-widest px-8 py-5 hover:bg-[#dcc088] transition-colors font-semibold"
               >
                 START YOUR JOURNEY
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a
                 href="#features"
-                className="group inline-flex items-center gap-4 border border-[#2e2e2e] text-[#5a5a5a] font-mono text-sm tracking-widest px-8 py-5 hover:border-[#c6f752]/40 hover:text-[#c6f752] transition-colors"
+                className="group inline-flex items-center gap-4 border border-[#2e2e2e] text-[#5a5a5a] font-mono text-sm tracking-widest px-8 py-5 hover:border-[#c8a765]/40 hover:text-[#c8a765] transition-colors"
               >
                 BOOK A FREE CALL
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -142,7 +142,7 @@ export function CtaSection() {
                 { v: "90-DAY", l: "guarantee" },
               ].map(s => (
                 <div key={s.l} className="text-center">
-                  <div className="font-display text-2xl text-[#c6f752]">{s.v}</div>
+                  <div className="font-display text-2xl text-[#c8a765]">{s.v}</div>
                   <div className="font-mono text-[9px] text-[#3a3a3a] tracking-widest">{s.l}</div>
                 </div>
               ))}

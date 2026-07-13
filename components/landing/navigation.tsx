@@ -45,7 +45,7 @@ export function Navigation() {
           </span>
           <div className="hidden md:flex items-center gap-6">
             <span className="font-mono text-[10px] text-[#3a3a3a]">
-              <span className="text-[#22c55e]">●</span>&nbsp;COACHING_SLOTS_OPEN
+              <span className="text-[#c8a765]">●</span>&nbsp;COACHING_SLOTS_OPEN
             </span>
             <span className="font-mono text-[10px] text-[#3a3a3a] tracking-widest">NO EQUIPMENT? NO EXCUSE.</span>
           </div>
@@ -55,9 +55,9 @@ export function Navigation() {
         <div className="px-6 lg:px-12 h-14 flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-7 h-7 border border-[#c6f752] flex items-center justify-center">
-              <div className="w-2 h-2 bg-[#c6f752]" />
-              <div className="absolute inset-0 bg-[#c6f752]/10 group-hover:bg-[#c6f752]/20 transition-colors" />
+            <div className="relative w-7 h-7 border border-[#c8a765] flex items-center justify-center">
+              <div className="w-2 h-2 bg-[#c8a765]" />
+              <div className="absolute inset-0 bg-[#c8a765]/10 group-hover:bg-[#c8a765]/20 transition-colors" />
             </div>
             <span className="font-display text-2xl tracking-[0.12em] text-[#f2ede6]">FITNESS&nbsp;REPUBLIC</span>
           </a>
@@ -68,7 +68,7 @@ export function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-mono text-[11px] tracking-[0.18em] text-[#5a5a5a] hover:text-[#c6f752] transition-colors duration-200"
+                className="font-mono text-[11px] tracking-[0.18em] text-[#5a5a5a] hover:text-[#c8a765] transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -82,7 +82,7 @@ export function Navigation() {
             </a>
             <a
               href="#pricing"
-              className="font-mono text-[11px] tracking-widest bg-[#c6f752] text-[#050505] px-5 h-9 flex items-center hover:bg-[#d4ff6b] transition-colors font-semibold"
+              className="font-mono text-[11px] tracking-widest bg-[#c8a765] text-[#050505] px-5 h-9 flex items-center hover:bg-[#dcc088] transition-colors font-semibold"
             >
               START_TODAY →
             </a>
@@ -101,7 +101,7 @@ export function Navigation() {
         {/* Scroll progress bar */}
         <div className="h-px w-full bg-transparent">
           <div
-            className="h-full bg-[#c6f752] transition-[width] duration-150 ease-out"
+            className="h-full bg-[#c8a765] transition-[width] duration-150 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -120,7 +120,7 @@ export function Navigation() {
               key={link.name}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`border-b border-[#1e1e1e] px-8 py-6 font-display text-4xl tracking-wider text-[#f2ede6] hover:text-[#c6f752] transition-all duration-300 flex items-center justify-between ${
+              className={`border-b border-[#1e1e1e] px-8 py-6 font-display text-4xl tracking-wider text-[#f2ede6] hover:text-[#c8a765] transition-all duration-300 flex items-center justify-between ${
                 open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
               }`}
               style={{ transitionDelay: open ? `${i * 55}ms` : "0ms" }}
@@ -136,7 +136,7 @@ export function Navigation() {
           <a
             href="#pricing"
             onClick={() => setOpen(false)}
-            className="w-full block text-center font-mono text-sm tracking-widest bg-[#c6f752] text-[#050505] py-5 font-semibold"
+            className="w-full block text-center font-mono text-sm tracking-widest bg-[#c8a765] text-[#050505] py-5 font-semibold"
           >
             START_TODAY →
           </a>

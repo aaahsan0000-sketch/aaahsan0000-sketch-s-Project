@@ -37,9 +37,9 @@ export function FooterSection() {
         <div className="border-b border-[#1e1e1e] py-12 grid lg:grid-cols-[1fr_2fr] gap-10">
           <div>
             <a href="#" className="inline-flex items-center gap-3 mb-5 group">
-              <div className="w-8 h-8 border border-[#c6f752] flex items-center justify-center relative">
-                <div className="w-2.5 h-2.5 bg-[#c6f752]" />
-                <div className="absolute inset-0 bg-[#c6f752]/10 group-hover:bg-[#c6f752]/20 transition-colors" />
+              <div className="w-8 h-8 border border-[#c8a765] flex items-center justify-center relative">
+                <div className="w-2.5 h-2.5 bg-[#c8a765]" />
+                <div className="absolute inset-0 bg-[#c8a765]/10 group-hover:bg-[#c8a765]/20 transition-colors" />
               </div>
               <span className="font-display text-2xl tracking-[0.1em] text-[#f2ede6]">FITNESS&nbsp;REPUBLIC</span>
             </a>
@@ -48,7 +48,7 @@ export function FooterSection() {
             </p>
             <div className="flex gap-5 mt-6">
               {["INSTAGRAM", "YOUTUBE", "TIKTOK"].map(s => (
-                <a key={s} href="#" className="font-mono text-[10px] tracking-widest text-[#3a3a3a] hover:text-[#c6f752] transition-colors">
+                <a key={s} href="#" className="font-mono text-[10px] tracking-widest text-[#3a3a3a] hover:text-[#c8a765] transition-colors">
                   {s} ↗
                 </a>
               ))}
@@ -59,14 +59,14 @@ export function FooterSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {Object.entries(LINKS).map(([section, links]) => (
               <div key={section}>
-                <h3 className="font-mono text-[9px] tracking-[0.2em] text-[#c6f752] mb-5">{section}</h3>
+                <h3 className="font-mono text-[9px] tracking-[0.2em] text-[#c8a765] mb-5">{section}</h3>
                 <ul className="space-y-3">
                   {links.map(l => (
                     <li key={l.name}>
                       <a href={l.href} className="font-mono text-[11px] text-[#3a3a3a] hover:text-[#f2ede6] transition-colors inline-flex items-center gap-2">
                         {l.name}
                         {"badge" in l && l.badge && (
-                          <span className="text-[9px] border border-[#c6f752]/30 text-[#c6f752] px-1.5 py-0.5 tracking-wider">
+                          <span className="text-[9px] border border-[#c8a765]/30 text-[#c8a765] px-1.5 py-0.5 tracking-wider">
                             {l.badge}
                           </span>
                         )}
@@ -87,8 +87,8 @@ export function FooterSection() {
           <div className="flex items-center gap-6">
             <span className="font-mono text-[10px] text-[#3a3a3a] tracking-widest">TRAIN HARD · STAY CONSISTENT</span>
             <div className="flex items-center gap-2">
-              <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
-              <span className="font-mono text-[10px] text-[#22c55e] tracking-widest">ACCEPTING_MEMBERS</span>
+              <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#c8a765] inline-block" />
+              <span className="font-mono text-[10px] text-[#c8a765] tracking-widest">ACCEPTING_MEMBERS</span>
             </div>
           </div>
         </div>

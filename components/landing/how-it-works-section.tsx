@@ -110,7 +110,7 @@ export function HowItWorksSection() {
                   <span className="font-mono text-[10px] text-[#3a3a3a]">{s.id}</span>
                 </div>
                 <h3 className={`font-display text-2xl leading-[0.9] whitespace-pre-line transition-colors ${
-                  active === i ? "text-[#c6f752]" : "text-[#3a3a3a] group-hover:text-[#5a5a5a]"
+                  active === i ? "text-[#c8a765]" : "text-[#3a3a3a] group-hover:text-[#5a5a5a]"
                 }`}>
                   {s.title}
                 </h3>
@@ -118,7 +118,7 @@ export function HowItWorksSection() {
                   <div className="mt-4 h-px bg-[#1e1e1e] overflow-hidden">
                     <div
                       key={active}
-                      className="h-full bg-[#c6f752]"
+                      className="h-full bg-[#c8a765]"
                       style={{ width: 0, animation: "draw-line 5s linear forwards" }}
                     />
                   </div>
@@ -133,7 +133,7 @@ export function HowItWorksSection() {
             <div className="border-r border-[#1e1e1e] p-8 flex flex-col justify-between">
               <div>
                 <p className="text-sm text-[#5a5a5a] leading-relaxed mb-8">{step.desc}</p>
-                <a href="#pricing" className="inline-flex items-center gap-2 font-mono text-[11px] text-[#c6f752] tracking-wider hover:underline">
+                <a href="#pricing" className="inline-flex items-center gap-2 font-mono text-[11px] text-[#c8a765] tracking-wider hover:underline">
                   GET STARTED →
                 </a>
               </div>
@@ -147,8 +147,8 @@ export function HowItWorksSection() {
               <div className="border-b border-[#1e1e1e] px-5 py-3 flex items-center justify-between">
                 <span className="font-mono text-[10px] text-[#3a3a3a]">{step.file}</span>
                 <div className="flex items-center gap-2">
-                  <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
-                  <span className="font-mono text-[10px] text-[#22c55e]">SYNCED</span>
+                  <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#c8a765] inline-block" />
+                  <span className="font-mono text-[10px] text-[#c8a765]">SYNCED</span>
                 </div>
               </div>
               <div className="p-6 font-mono text-[12px] min-h-[260px]">
@@ -162,7 +162,7 @@ export function HowItWorksSection() {
                       <span className="text-[#3a3a3a] select-none w-5 inline-block text-right mr-4">
                         {li + 1}
                       </span>
-                      <span className={line.startsWith(">") || line.startsWith("\"") ? "text-[#c6f752]" : "text-[#5a5a5a]"}>{line}</span>
+                      <span className={line.startsWith(">") || line.startsWith("\"") ? "text-[#c8a765]" : "text-[#5a5a5a]"}>{line}</span>
                     </div>
                   ))}
                 </pre>

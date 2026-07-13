@@ -119,7 +119,7 @@ export function DevelopersSection() {
                 style={{ transitionDelay: `${i * 60 + 100}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="font-mono text-[11px] text-[#c6f752] tracking-wider">{p.k}</span>
+                  <span className="font-mono text-[11px] text-[#c8a765] tracking-wider">{p.k}</span>
                   <span className="font-mono text-[10px] text-[#3a3a3a]">{String(i + 1).padStart(2, "0")}</span>
                 </div>
                 <p className="mt-1 text-sm text-[#5a5a5a]">{p.v}</p>
@@ -127,7 +127,7 @@ export function DevelopersSection() {
             ))}
 
             <div className="p-6 flex items-center gap-6">
-              <a href="#" className="font-mono text-[11px] text-[#c6f752] tracking-wider hover:underline">
+              <a href="#" className="font-mono text-[11px] text-[#c8a765] tracking-wider hover:underline">
                 APP STORE ↗
               </a>
               <a href="#" className="font-mono text-[11px] text-[#5a5a5a] tracking-wider hover:text-[#f2ede6] transition-colors">
@@ -150,22 +150,22 @@ export function DevelopersSection() {
                   onClick={() => setTab(i)}
                   className={`flex-1 py-3 font-mono text-[10px] tracking-[0.15em] transition-colors relative ${
                     tab === i
-                      ? "text-[#c6f752] bg-[#0e0e0e]"
+                      ? "text-[#c8a765] bg-[#0e0e0e]"
                       : "text-[#3a3a3a] hover:text-[#5a5a5a] hover:bg-[#0a0a0a]"
                   }`}
                 >
                   {t.label}
                   {tab === i && (
-                    <span className="absolute bottom-0 left-0 right-0 h-px bg-[#c6f752]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-px bg-[#c8a765]" />
                   )}
                 </button>
               ))}
               <button
                 onClick={copy}
-                className="px-4 border-l border-[#1e1e1e] text-[#3a3a3a] hover:text-[#c6f752] transition-colors"
+                className="px-4 border-l border-[#1e1e1e] text-[#3a3a3a] hover:text-[#c8a765] transition-colors"
                 aria-label="Copy plan"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-[#22c55e]" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-[#c8a765]" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
@@ -188,8 +188,8 @@ export function DevelopersSection() {
             <div className="border-t border-[#1e1e1e] px-6 py-3 flex items-center justify-between bg-[#080808]">
               <span className="font-mono text-[10px] text-[#3a3a3a]">Fitness Republic App · v3.1</span>
               <div className="flex items-center gap-2">
-                <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#22c55e] inline-block" />
-                <span className="font-mono text-[10px] text-[#22c55e]">SYNCED</span>
+                <span className="status-pulse w-1.5 h-1.5 rounded-full bg-[#c8a765] inline-block" />
+                <span className="font-mono text-[10px] text-[#c8a765]">SYNCED</span>
               </div>
             </div>
           </div>

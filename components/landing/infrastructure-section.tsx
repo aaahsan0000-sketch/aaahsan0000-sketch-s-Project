@@ -52,7 +52,7 @@ export function InfrastructureSection() {
               { v: "4–6",  l: "DAYS / WEEK" },
             ].map(s => (
               <div key={s.l}>
-                <div className="font-display text-3xl text-[#c6f752]">{s.v}</div>
+                <div className="font-display text-3xl text-[#c8a765]">{s.v}</div>
                 <div className="font-mono text-[9px] text-[#3a3a3a] tracking-widest mt-1">{s.l}</div>
               </div>
             ))}
@@ -78,14 +78,14 @@ export function InfrastructureSection() {
               <div className="flex items-center gap-3">
                 <span
                   className={`w-1.5 h-1.5 rounded-full transition-colors shrink-0 ${
-                    active === i ? "bg-[#c6f752]" : "bg-[#2e2e2e]"
+                    active === i ? "bg-[#c8a765]" : "bg-[#2e2e2e]"
                   }`}
                 />
                 <span className={`font-mono text-sm ${active === i ? "text-[#f2ede6]" : "text-[#5a5a5a]"}`}>
                   {r.day}
                 </span>
               </div>
-              <span className={`font-mono text-[11px] tracking-wider self-center ${active === i ? "text-[#c6f752]" : "text-[#5a5a5a]"}`}>
+              <span className={`font-mono text-[11px] tracking-wider self-center ${active === i ? "text-[#c8a765]" : "text-[#5a5a5a]"}`}>
                 {r.focus}
               </span>
               <span className="font-mono text-[10px] text-[#3a3a3a] tracking-wider self-center">{r.split}</span>
@@ -93,7 +93,7 @@ export function InfrastructureSection() {
               <div className="flex items-center gap-2 self-center">
                 <div className="flex-1 h-1 bg-[#1e1e1e]">
                   <div
-                    className="h-full bg-[#c6f752] transition-all duration-500"
+                    className="h-full bg-[#c8a765] transition-all duration-500"
                     style={{ width: `${r.intensity}%`, opacity: active === i ? 1 : 0.4 }}
                   />
                 </div>

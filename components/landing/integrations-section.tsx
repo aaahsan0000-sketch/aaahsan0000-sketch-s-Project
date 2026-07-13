@@ -30,7 +30,7 @@ const ROW2 = [
 
 function IntChip({ name, cat }: { name: string; cat: string }) {
   return (
-    <div className="shrink-0 flex items-center gap-4 border border-[#1e1e1e] px-5 py-3.5 hover:border-[#c6f752]/40 hover:bg-[#c6f752]/5 transition-all duration-200 cursor-default group">
+    <div className="shrink-0 flex items-center gap-4 border border-[#1e1e1e] px-5 py-3.5 hover:border-[#c8a765]/40 hover:bg-[#c8a765]/5 transition-all duration-200 cursor-default group">
       <span className="font-mono text-[9px] text-[#3a3a3a] tracking-widest">{cat}</span>
       <span className="font-display text-lg text-[#5a5a5a] group-hover:text-[#f2ede6] transition-colors">
         {name}
@@ -95,7 +95,7 @@ export function IntegrationsSection() {
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
         <span className="font-mono text-[10px] text-[#3a3a3a]">+ MANUAL LOGGING FOR EVERYTHING ELSE</span>
-        <a href="#" className="font-mono text-[10px] text-[#c6f752] hover:underline tracking-wider">
+        <a href="#" className="font-mono text-[10px] text-[#c8a765] hover:underline tracking-wider">
           SEE ALL SYNCS →
         </a>
       </div>

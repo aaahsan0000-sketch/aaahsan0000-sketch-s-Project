@@ -1,19 +1,19 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from 'next/font/google'
+import { Jost, Playfair_Display, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 
-const barlow = Barlow({
+const jost = Jost({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  variable: '--font-barlow',
+  variable: '--font-jost',
 })
 
-const barlowCondensed = Barlow_Condensed({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
-  variable: '--font-barlow-condensed',
+  variable: '--font-playfair',
 })
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${barlow.variable} ${barlowCondensed.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
+      <body className={`${jost.variable} ${playfair.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

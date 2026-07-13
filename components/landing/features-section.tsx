@@ -61,7 +61,7 @@ function FeatureRow({ f, index }: { f: typeof FEATURES[0]; index: number }) {
 
         <div className="border-r border-[#1e1e1e] p-6 flex flex-col gap-3">
           <span className="sys-tag text-[9px]">{f.tag}</span>
-          <h3 className="font-display text-3xl lg:text-4xl leading-[0.9] text-[#f2ede6] group-hover:text-[#c6f752] transition-colors duration-300 whitespace-pre-line">
+          <h3 className="font-display text-3xl lg:text-4xl leading-[0.9] text-[#f2ede6] group-hover:text-[#c8a765] transition-colors duration-300 whitespace-pre-line">
             {f.title}
           </h3>
         </div>
@@ -71,7 +71,7 @@ function FeatureRow({ f, index }: { f: typeof FEATURES[0]; index: number }) {
         </div>
 
         <div className="hidden lg:flex flex-col items-end justify-center p-6">
-          <div className="font-display text-4xl text-[#c6f752]">{f.stat.v}</div>
+          <div className="font-display text-4xl text-[#c8a765]">{f.stat.v}</div>
           <div className="font-mono text-[9px] text-[#3a3a3a] tracking-widest mt-1 text-right">{f.stat.l}</div>
         </div>
       </div>
@@ -126,7 +126,7 @@ export function FeaturesSection() {
           <div className="border-r border-[#1e1e1e]" />
           <div className="p-6 flex items-center justify-between">
             <span className="font-mono text-[10px] text-[#3a3a3a]">NOT SURE WHERE TO START? →</span>
-            <a href="#pricing" className="font-mono text-xs text-[#c6f752] hover:underline tracking-wider">BOOK A FREE CALL</a>
+            <a href="#pricing" className="font-mono text-xs text-[#c8a765] hover:underline tracking-wider">BOOK A FREE CALL</a>
           </div>
         </div>
       </div>
